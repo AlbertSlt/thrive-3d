@@ -22,13 +22,14 @@ import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import { IoCartOutline } from "react-icons/io5";
 import Badge from 'react-bootstrap/Badge';
+import CartWidget from './CartWidget';
 
 
 function NavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="">
       <Container>
-        <Navbar.Brand href="#home">Twitch 3d</Navbar.Brand>
+        <Navbar.Brand href="#home"><img src="../public/logo-thrive.png" alt="logotipo Thrive-3d" className='logo-navbar' /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -44,10 +45,11 @@ function NavBar() {
               <NavDropdown.Item href="#action/3.3">Modelos</NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <div>
+          <CartWidget />
+          </div>
         </Navbar.Collapse>
       </Container>
-      <IoCartOutline />
-       <Badge bg="success">5</Badge>
     </Navbar>
   )
 }
