@@ -8,7 +8,7 @@ const Item = ({ prod }) => {
         //etiqueta img lleva cierre
         //estilos en linea como objetos, no como string en html 
         //en vez de class, uso className
-        <div className="card" style={{ width: '18rem' }}>
+        <div className="card" style={{ width: '18rem',  margin:'1rem' }}>
             <img src={img} className="card-img-top" alt={name} />
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
