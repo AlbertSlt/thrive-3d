@@ -1,18 +1,24 @@
+//NAVBAR NORMAL
+
 // import CartWidget from "./CartWidget"
+// import { NavLink } from "react-router-dom"
 
 // const NavBar = () => {
 //   return(
-//   <nav>
-//     <a href="">2222</a>
-//     <a href="">2222</a>
-//     <a href="">2222</a>
-//     <a href="">2222</a>
+//   <nav className="nav-contain">
+//     <NavLink to="/">Home</NavLink>
+//     <NavLink to="Impresoras 3d">Impresoras 3d</NavLink>
+//     <NavLink to="">2222</NavLink>
+//     <NavLink to="">2222</NavLink>
 
 //     <CartWidget />
 //   </nav>
 //   )
 // }
 // export default NavBar
+
+
+
 
 //NAVBAR BOOTSTRAP:
 
@@ -23,26 +29,26 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import { IoCartOutline } from "react-icons/io5";
 import Badge from 'react-bootstrap/Badge';
 import CartWidget from './CartWidget';
-
+import { NavLink } from 'react-router-dom'
 
 function NavBar() {
   return (
     <Navbar expand="lg" className="">
       <Container>
-        <Navbar.Brand href="#home"><img src="../logo-thrive.png" alt="logotipo Thrive-3d" className='logo-navbar' /></Navbar.Brand>
+        <Navbar.Brand as={NavLink} to='/'><img src="../logo-thrive.png" alt="logotipo Thrive-3d" className='logo-navbar' /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Nosotros</Nav.Link>
+            <Nav.Link as={NavLink} to='/'>Home</Nav.Link>
+            <Nav.Link as={NavLink} to='/nosotros'>Nosotros</Nav.Link>
             <NavDropdown title="Productos" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
+              <NavDropdown.Item as={NavLink} to='/category/Impresoras 3d'>
                 Impresoras 3d
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.2">Filamentos</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to='/category/Filamentos'>Filamentos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.3">Modelos</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to='/category/Modelos'>Modelos</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <div>

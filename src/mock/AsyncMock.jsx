@@ -70,3 +70,19 @@ export const getProducts = () => {
     })
 }
 
+
+//OTRA OPCION PARA ITEMDETAILCONTAINER
+export const getOneProduct = (id) => {
+    return new Promise((resolve, reject) => { //resolve siempre antes que reject, sino se rompe
+        setTimeout(() => {
+
+            if (error) {
+                reject('Hubo un error, intente más tarde.')
+            } else {
+                let product= productos.find((prod)=> prod.id === id)
+                resolve(product)
+            }
+
+        }, 1000);
+    })
+}

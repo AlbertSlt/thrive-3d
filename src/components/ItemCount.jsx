@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ stock, onAdd }) => {
     // console.log(props)
     const [count, setCount] = useState(1)
     const [compra, setCompra] = useState(false)
@@ -15,22 +15,30 @@ const ItemCount = ({ stock }) => {
             setCount(count - 1)
         }
     }
-    const comprarItem = () => {
-        setCompra(!compra)
 
-    }
+
+    // const comprarItem = () => {
+    //     setCompra(!compra)
+    // }
+    // const comprar = () => {
+    // onAdd()
+//}
 
     // useEffect(() => {
     //     console.log('sin array de dependencias me ejecuto SIEMPRE')
     // })
-    useEffect(() => {
-        console.log('con array de dependencia vacio me ejecuto una sola vez')
-    }, [])
-    useEffect(() => {
-        console.log('con array de dependencias con datos, se ejecuta cuando se monta el componente y cada vez que lo que esta escuchando se actualiza ')
-    }, [compra])
+    // useEffect(() => {
+    //     console.log('con array de dependencia vacio me ejecuto una sola vez')
+    // }, [])
+    // useEffect(() => {
+    //     console.log('con array de dependencias con datos, se ejecuta cuando se monta el componente y cada vez que lo que esta escuchando se actualiza ')
+    // }, [compra])
 
-    console.log('soy item count')
+    // console.log('soy item count')
+
+    const comprar = () => {
+        onAdd(count)
+    }
 
     return (
         <div>
@@ -40,7 +48,7 @@ const ItemCount = ({ stock }) => {
                 <button className='btn btn-success' onClick={sumar}>+</button>
             </div>
             <div>
-                <button className='btn btn-primary' onClick={comprarItem} disabled={stock === 0}>Comprar</button>
+                <button className='btn btn-primary' onClick={comprar} disabled={stock === 0}>Comprar</button>
             </div>
         </div>
     )
