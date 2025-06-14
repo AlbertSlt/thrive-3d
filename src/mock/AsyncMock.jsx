@@ -66,7 +66,7 @@ export const getProducts = () => {
                 resolve(productos)
             }
 
-        }, 1000);
+        }, 1500);
     })
 }
 

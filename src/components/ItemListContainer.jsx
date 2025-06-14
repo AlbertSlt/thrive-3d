@@ -27,7 +27,7 @@ const ItemListContainer = (props) => {
   // console.log(data)
   return (
     <div>
-      <h1>{props.greetings}</h1>
+      <h1 style={{textAlign: "center", marginTop: "1.5rem"}}>{props.greetings}{categoryId}</h1>
       <ItemList data={data} />
     </div>
   )
