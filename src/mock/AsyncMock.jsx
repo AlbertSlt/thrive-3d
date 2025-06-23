@@ -93,7 +93,7 @@ export const getProducts = () => {
                 resolve(productos)
             }
 
-        }, 1500);
+        }, 3000);
     })
 }
 
@@ -110,6 +110,6 @@ export const getOneProduct = (id) => {
                 resolve(product)
             }
 
-        }, 1500);
+        }, 3000);
     })
 }

@@ -16,8 +16,6 @@ const Item = ({ prod }) => {
                 <p className="card-text">${price},00</p>
                 {/* <Link to={'/item/' + id} className="btn btn-primary">Ver más</Link> concatenacion normal */}
                 <Link to={`/item/${id}`} className="btn btn-primary">Ver más</Link> {/*Aca SI puedo aplicar estilos porque es el nuevo "anchor tag", a diferencia de los componentes de configuracion*/}
-
-
             </div>
         </div>
     )

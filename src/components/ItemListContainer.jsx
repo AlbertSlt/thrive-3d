@@ -2,14 +2,17 @@ import { useEffect, useState } from "react";
 import { getProducts } from "../mock/AsyncMock";
 import ItemList from "./ItemList";
 import { useParams } from "react-router";
+import LoaderComponent from "./LoaderComponent";
 //import Input from "../examples/Input";
 
 const ItemListContainer = (props) => {
 
   const [data, setData] = useState([])
+const [loading, setLoading] = useState(false)
   const { categoryId } = useParams()
 
   useEffect(() => {
+    setLoading(true)
     getProducts()
       .then((respuesta) => {
         if (categoryId) {
@@ -20,16 +23,21 @@ const ItemListContainer = (props) => {
           setData(respuesta)
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(()=> setLoading(false));
 
   }, [categoryId])
 
-  // console.log(data)
   return (
-    <div>
+    <>
+      {
+        loading ? <LoaderComponent /> //loading existe? caso contraro renderiza el siguiente div
+        :     <div>
       <h1 style={{textAlign: "center", marginTop: "1.5rem"}}>{props.greetings}{categoryId}</h1>
       <ItemList data={data} />
     </div>
+      }
+    </>
   )
 }
 
