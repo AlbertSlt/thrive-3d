@@ -1,6 +1,8 @@
 import { createContext, useState } from "react";
 import { SiQuantcast } from "react-icons/si";
 
+
+
 // crear contexto, se hace => creando y exportando una constante para usarla en otros componentes
 export const CartContext = createContext()
 
@@ -75,12 +77,25 @@ export const CartProvider = ({ children }) => {
 
     //FALTAN ESTAS FUINCIONES
     //cantidad de items (sumar cantidades) 
-    //total a pagar
+
+    
+    const valorTotal = () => {
+        return cart.reduce((acumulador, item) => 
+            acumulador + (item.price * item.quantity), 0);
+    };
+
+        const totalItems = () => {
+        return cart.reduce((acumulador, item) => 
+            acumulador + item.quantity, 0);
+    };
+
+console.log(totalItems())
 
     return (
-        <CartContext.Provider value={{ cart, addItem, removeItem, clear }}>
+        <CartContext.Provider value={{ cart, addItem, removeItem, clear, valorTotal, totalItems }}>
             {children}
         </CartContext.Provider>
     )
 }
 
+export default CartProvider;
