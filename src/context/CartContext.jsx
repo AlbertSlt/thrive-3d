@@ -76,12 +76,10 @@ export const CartProvider = ({ children }) => {
 
 
     //FALTAN ESTAS FUINCIONES
-    //cantidad de items (sumar cantidades) 
-
-    
+        
     const valorTotal = () => {
         return cart.reduce((acumulador, item) => 
-            acumulador + (item.price * item.quantity), 0);
+            acumulador += (item.price * item.quantity), 0); //revisar si el += funciona, yo lo tenia solamente +
     };
 
         const totalItems = () => {

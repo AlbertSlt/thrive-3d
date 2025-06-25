@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 
 const CartView = () => {
-    const { cart, clear, removeItem, valorTotal } = useContext(CartContext)
+    const { cart, clear, removeItem, valorTotal } = useContext(CartContext) //revisar 2022*-----------------------------------------------
 
      //puedo hacer un componente cartItem o hacer todo acá
     return (

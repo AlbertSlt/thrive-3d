@@ -38,6 +38,7 @@ function App() {
           <Route path='/item/:id' element={<IntemDetailContainer />} /> {/*acá itemDetailContainer es quien indica el id*/}
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/cart' element={<CartContainer />} />
+          <Route path='/checkout' element={<Checkout />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </CartProvider>

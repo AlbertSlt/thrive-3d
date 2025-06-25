@@ -1,15 +1,8 @@
-const productos = [
+//PARA SUBIR A FIREBASE ELIMINO LOS ID QUE PUSIMOS INICIALMENTE Y BORRO EL PRODUCTO SUBIDO A MANO
+
+export const productos = [
+
     {
-        id: '1',
-        name: 'Bambu Lab A1 Combo',
-        description: 'Cargá hasta 4 colores y tipos de filamentos para impresiones mas rapidas y faciles, la impresion en toda su extensión!',
-        stock: 5,
-        price: 1200000,
-        category: 'Impresoras 3d',
-        img: '../img-prods/bambulab-a1-combo.png'
-    },
-    {
-        id: '2',
         name: 'Creality Ender 3 V3 Plus',
         description: 'La nueva version de la mas pedida, la vieja confiable!',
         stock: 8,
@@ -18,7 +11,6 @@ const productos = [
         img: '../img-prods/creality-ender-3-v3-plus.png' //imagenes dentro de carpeta public/img-prods
     },
       {
-        id: '3',
         name: 'Creality Ender 3 V2 Neo',
         description: 'La confiable, ahora con nivelado automático',
         stock: 4,
@@ -27,7 +19,6 @@ const productos = [
         img: '../img-prods/creality-ender-3-v2-neo.png'
     },
     {
-        id: '4',
         name: 'Flsun Super Racer',
         description: 'Velocidad y calidad, las 3 B',
         stock: 5,
@@ -36,7 +27,6 @@ const productos = [
         img: '../img-prods/flsun-sr.png'
     },
     {
-        id: '5',
         name: 'Filamento 3N3 - PLA 1kg',
         description: 'Disponible en 7 colores',
         stock: 12,
@@ -45,7 +35,6 @@ const productos = [
         img: '../img-prods/filamento-3n3-pla-1kg.png'
     },
         {
-        id: '6',
         name: 'Filamento GST 3D - PLA 1Kg',
         description: 'Disponible en 13 colores',
         stock: 28,
@@ -54,7 +43,6 @@ const productos = [
         img: '../img-prods/filamento-gst3d-1kg.png'
     },
     {
-        id: '7',
         name: 'Secadora de filamento Creality',
         description: 'Elimina la humedad de manera efectiva y controlada',
         stock: 8,
@@ -63,7 +51,6 @@ const productos = [
         img: '../img-prods/secadora-creality.png'
     },
     {
-        id: '8',
         name: 'Lampara LED - 4 fotos personalizables',
         description: 'Para uso personal o emprendimientos, tus imagenes con laminas intercambiables',
         stock: 200,
@@ -72,7 +59,6 @@ const productos = [
         img: '../img-prods/lampara-litofania.png'
     },
     {
-        id: '9',
         name: 'Agitadores de bebidas personalizables',
         description: 'Llevá tu marca a cada vaso!',
         stock: 1200,

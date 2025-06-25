@@ -9,7 +9,7 @@ const CartWidget = () => {
   return (
     <div className="carrito-container">
        <IoCartOutline />
-            <Badge bg="success">5</Badge>
+      <Badge bg="success">{ totalItems  }</Badge>
     </div>
   )
 }
