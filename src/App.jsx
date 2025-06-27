@@ -7,12 +7,10 @@ import IntemDetailContainer from './components/IntemDetailContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ErrorPage from './components/ErrorPage'
 import Nosotros from './components/Nosotros'
+import Checkout from './components/Checkout'
 //importo el provider y envuelvo a quienes deben recibir acceso
 import { CartProvider } from './context/CartContext'
 import CartContainer from './components/CartContainer'
-import { useEffect } from 'react'
-import { getItems } from './firebase'
-
 
 function App() {
 
@@ -20,12 +18,6 @@ function App() {
   // no poner estilos en App, llevar los estilos a los componentes
   //browserRouter debe envolver todo lo que se vera en app
   //arriba o abajo en todas las paginas va siempre arriba o abajo de <Routes></Routes>
-
-
-  //ejemplo Firebase
-  // useEffect(() => {
-  //   getItems();
-  // }, [])
 
 
   return (
@@ -45,5 +37,4 @@ function App() {
     </BrowserRouter>
   )
 }
-
 export default App

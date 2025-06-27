@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import LoaderComponent from "./LoaderComponent";
 import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../service/firebase";
-//import Input from "../examples/Input";
+
 
 const ItemListContainer = (props) => {
 
@@ -15,7 +15,6 @@ const [loading, setLoading] = useState(false)
 
 
   //FIREBASE
-
   useEffect(() => {
     setLoading(true)
     //conectar con collection
@@ -23,20 +22,21 @@ const [loading, setLoading] = useState(false)
       ? query(collection(db, "products"), where("category", "==", categoryId ))  // propiedad de documento, condicion y valor
       : collection(db, "products") //Metodo importado de firebase, datos (const hecha en firebase.jsx, "nombre de coleccion")
     //pedir los datos
-    getDocs(productsCollection) //metodo fb, devuelve una promesa
+    getDocs(productsCollection) //metodo firebase, devuelve una promesa
       .then((res) => {
         //limpiar los datos para poder usarlos
         //console.log(res.docs)
         const list = res.docs.map((doc) => {
-          return {
-            id: doc.id,
-            ...doc.data()
+          return { //retorno un objeto
+            id: doc.id, //id se crea por fuera del documento, no hace falta usar data pero si siempre llamar
+            ...doc.data() //metodo data da acceso a los valores reales del documento, convertimos la estructura interna en un objeto de js mas facil de manejar, hay que usarlo si o si
           }
         })
         setData(list)
-          .catch((errpr) => console.log(error))
+      })
+          .catch((error) => console.log(error))
         .finally(()=>setLoading(false))
-    })
+    
     
   },[categoryId])
 
@@ -62,18 +62,16 @@ const [loading, setLoading] = useState(false)
   // }, [categoryId])
 
 //HACER UNA SOLA VEZ SINO REPETIMOS OBJETOS
-  const subirData = () => {
-    console.log('click!')
-    
-    const collectionAgregar = collection(db, "products")
-    productos.map ((prod)=>addDoc(collectionAgregar, prod))
-
-  }
+  // const subirData = () => {
+  //   console.log('click!')
+  //   const collectionAgregar = collection(db, "products")
+  //   productos.map ((prod)=>addDoc(collectionAgregar, prod))
+  // }
 
 
   return (
     <>
-      <button onClick={subirData}>Subir productos</button> {/* ------ DESPUES BORRO ESTE BOTON AL HABER SUBIDO LOS PRODUCTOS ----------- */}
+      {/* <button onClick={subirData}>Subir productos</button> ------ DESPUES BORRO ESTE BOTON AL HABER SUBIDO LOS PRODUCTOS ----------- */}
       {
         loading ? <LoaderComponent /> //loading existe? caso contraro renderiza el siguiente div
         :     <div>

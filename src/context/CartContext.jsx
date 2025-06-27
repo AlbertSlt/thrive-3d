@@ -77,17 +77,19 @@ export const CartProvider = ({ children }) => {
 
     //FALTAN ESTAS FUINCIONES
         
+    //precio total del carrito
     const valorTotal = () => {
         return cart.reduce((acumulador, item) => 
-            acumulador += (item.price * item.quantity), 0); //revisar si el += funciona, yo lo tenia solamente +
+            acumulador += (item.price * item.quantity), 0); 
     };
 
+    //cantidad de items
         const totalItems = () => {
         return cart.reduce((acumulador, item) => 
-            acumulador + item.quantity, 0);
+            acumulador += item.quantity, 0);
     };
 
-console.log(totalItems())
+//console.log(totalItems())
 
     return (
         <CartContext.Provider value={{ cart, addItem, removeItem, clear, valorTotal, totalItems }}>

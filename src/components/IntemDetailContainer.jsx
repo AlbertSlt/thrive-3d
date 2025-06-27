@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getProducts, getOneProduct } from '../mock/AsyncMock'
 import ItemDetail from './ItemDetail'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import LoaderComponent from './LoaderComponent'
 import { collection, doc, getDoc } from 'firebase/firestore'
 import { db } from '../service/firebase'
@@ -21,14 +21,14 @@ import { db } from '../service/firebase'
 const IntemDetailContainer = () => {
     const [detail, setDetail] = useState({})
     //const params = useParams() igual al de abajo, abajo esta desestructurado
-    const [loader, setLoader] = useState(false)
+    const [loading, setLoading] = useState(false)
     const [invalid, setInvalid] = useState(false)
     const { id } = useParams()
     //console.log(params, 'params')
 
     //FIREBASE
   useEffect(()=>{
-    setCargando(true)
+    setLoading(true)
     //conectar con nuestra coleccion
     const productCollection = collection(db, "products")
     //crear la ref
@@ -38,14 +38,14 @@ const IntemDetailContainer = () => {
     //const docRef= doc(db,"products", id)
     getDoc(docRef)
     .then((res)=>{
-      if(res.data()){
+      if(res.data()){  //si el item existe
         setDetail({id:res.id, ...res.data()})
       }else{
-        setInvalid(true)
+        setInvalid(true) //si el item no existe
       }
     })
     .catch((error)=> console.log(error))
-    .finally(()=> setCargando(false))
+    .finally(()=> setLoading(false))
   },[])
 
 
@@ -58,10 +58,19 @@ const IntemDetailContainer = () => {
     //         .finally(() => setLoader(false))
     // }, [])
 
+  
+  //return anticipado
+  if (invalid) {
+    return <div  style={{textAlign: "center", marginTop: "2rem"}}>
+      <h1 >El producto no existe :/</h1>
+      <Link to ='/' className='btn btn-dark'>Volver al Home</Link>
+    </div>
+  }
+  
     return (
         <>
             {
-                loader ? <LoaderComponent /> : <ItemDetail detail={detail} />
+                loading ? <LoaderComponent /> : <ItemDetail detail={detail} />
             }
         </>
     )
