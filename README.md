@@ -1,12 +1,24 @@
-# React + Vite
+# Thrive-3d
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto fue realizado para bla bla bla con bla bla
 
-Currently, two official plugins are available:
+![image](/public/logo-thrive.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Instalación ⚙️
 
-## Expanding the ESLint configuration
+1. Clone el repositorio
+2. Muevase a la carpeta creada con el comando `cd thrive-3d` 
+3. Ejecute el comando `npm install` para instalar dependencias y crear la carpeta node_modules
+4. Ejecute el comando `npm run dev` para levantarlo en servidor local.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Versión Host 
+
+Si desea ver el proyecto online puede ingresar al siguiente link: [Thrive-3d](dirección)
+
+### Librerias utilizadas ESTO SE PIDE
+- [React Bootstrap](https://react-bootstrap.netlify.app/): Utilizada para el styling de la app.
+- [Firebase](http://firebase.google.com/):Utilizado como base de datos.
+- [React Router Dom](): Utilizado para implementar la navegación por rutas.
+- [React Icons](): Utilizada para iconos
+
+Desarrollado por Facha
