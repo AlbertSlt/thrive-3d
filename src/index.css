@@ -75,27 +75,34 @@ button:focus-visible {
   text-align: center;
 }
 
-
 .logo-navbar {
   height: 60px;
 }
 
 .carrito-container {
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center; /* alinea el ícono y el badge verticalmente */
+  gap: 0.25rem; /* espacio entre ícono y badge, opcional */
+  font-size: 1.25rem;
+    align-self: center;
 }
+
+.navbar .carrito-container {
+
+}
+
 
 html,
 body {
-  background-color: rgb(248, 252, 253)!important;
-
+  background-color: rgb(248, 252, 253) !important;
 }
 
 /* Estilos para los enlaces de navegación */
-.navbar .nav-link { 
+.navbar .nav-link {
   font-size: 1.25rem;
-  padding: 0.5rem 1rem; 
- }
+  padding: 0.5rem 1rem;
+}
 
 .navbar .dropdown-item {
-  font-size: 1.2rem; 
+  font-size: 1.2rem;
 }

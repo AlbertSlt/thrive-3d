@@ -6,7 +6,7 @@
 //   return(
 //   <nav className="nav-contain">
 //     <NavLink to="/">Home</NavLink>
-//     <NavLink to="Impresoras 3d">Impresoras 3d</NavLink>
+//     <NavLink to="/Impresoras 3d">Impresoras 3d</NavLink>
 //     <NavLink to="">2222</NavLink>
 //     <NavLink to="">2222</NavLink>
 //     <CartWidget />
@@ -45,9 +45,10 @@ function NavBar() {
               <NavDropdown.Divider />
               <NavDropdown.Item as={NavLink} to='/category/Modelos'>Modelos</NavDropdown.Item>
             </NavDropdown>
+                 <CartWidget />
           </Nav>
           <div className="text-end">
-            <CartWidget />
+       
           </div>
         </Navbar.Collapse>
       </Container>
