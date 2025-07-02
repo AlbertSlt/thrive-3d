@@ -13,7 +13,7 @@ Este proyecto fue realizado para bla bla bla con bla bla
 
 ### Versión Host 
 
-Si desea ver el proyecto online puede ingresar al siguiente link: [Thrive-3d](dirección)
+Si desea ver el proyecto online puede ingresar al siguiente link: [Thrive-3d](https://thrive-3d.vercel.app/)
 
 ### Librerias utilizadas ESTO SE PIDE
 - [React Bootstrap](https://react-bootstrap.netlify.app/): Utilizada para el styling de la app.

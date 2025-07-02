@@ -1,9 +1,21 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const CartView = () => {
     const { cart, clear, removeItem, valorTotal } = useContext(CartContext) //revisar 2022*-----------------------------------------------
+    const preCofirm = () => {
+        Swal.fire({
+            title: 'Seguro que queres vaciar el carrito?',
+                showDenyButton: true,
+                confirmButtonText: 'si'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                clear()
+            }
+        })
+    }
 
     //puedo hacer un componente cartItem o hacer todo acá
     return (
@@ -27,7 +39,7 @@ const CartView = () => {
 
             <span style={{ display: 'flex', justifyContent: 'space-evenly', textAlign: 'center', fontSize: '1.3rem', fontWeight: 'bold' }}>Total a pagar: ${valorTotal()},00 </span>
             <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', width: '100%', padding: '2 rem' }}>
-                <button className='btn btn-danger' onClick={clear}>Vaciar carrito</button>
+                <button className='btn btn-danger' onClick={preCofirm}>Vaciar carrito</button>
                 <Link className='btn btn-success' to='/checkout'>Terminar Compra</Link>
             </div>
         </div>

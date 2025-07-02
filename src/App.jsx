@@ -7,7 +7,7 @@ import IntemDetailContainer from './components/IntemDetailContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ErrorPage from './components/ErrorPage'
 import Nosotros from './components/Nosotros'
-import Checkout from './components/Checkout'
+import CheckoutHook from './components/CheckoutHook'
 //importo el provider y envuelvo a quienes deben recibir acceso
 import { CartProvider } from './context/CartContext'
 import CartContainer from './components/CartContainer'
@@ -30,7 +30,7 @@ function App() {
           <Route path='/item/:id' element={<IntemDetailContainer />} /> {/*acá itemDetailContainer es quien indica el id*/}
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/cart' element={<CartContainer />} />
-          <Route path='/checkout' element={<Checkout />} />
+          <Route path='/checkout' element={<CheckoutHook />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </CartProvider>
