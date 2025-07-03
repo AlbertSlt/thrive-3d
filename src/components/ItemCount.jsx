@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Button } from 'react-bootstrap'
 
 const ItemCount = ({ stock, onAdd }) => {
     // console.log(props)
@@ -41,14 +42,14 @@ const ItemCount = ({ stock, onAdd }) => {
     }
 
     return (
-        <div>
-            <div>
-                <button className='btn btn-danger' onClick={restar}>-</button>
+        <div >
+            <div style={{textAlign: 'center'}}>
+                <button className='btn  btn-outline-primary' onClick={restar}>-</button>
                 <span className='btn'> {count}</span>
-                <button className='btn btn-success' onClick={sumar}>+</button>
+                <button className='btn btn-outline-success' onClick={sumar}  disabled={count >= stock}>+</button>
             </div>
-            <div>
-                <button className='btn btn-primary' onClick={comprar} disabled={stock === 0}>Comprar</button>
+            <div style={{textAlign: 'center', marginTop: '1rem' }}>
+                <button className='btn btn-outline-primary' onClick={comprar} disabled={stock === 0 || count === 0}>Comprar</button>
             </div>
         </div>
     )

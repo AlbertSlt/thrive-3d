@@ -1,8 +1,8 @@
 # Thrive-3d
 
-Este proyecto fue realizado para bla bla bla con bla bla
+E-commerce especializado en insumos y productos para impresion 3d
 
-![image](/public/logo-thrive.png)
+![image](/public/inicio.png)
 
 ### Instalación ⚙️
 
@@ -18,7 +18,8 @@ Si desea ver el proyecto online puede ingresar al siguiente link: [Thrive-3d](ht
 ### Librerias utilizadas ESTO SE PIDE
 - [React Bootstrap](https://react-bootstrap.netlify.app/): Utilizada para el styling de la app.
 - [Firebase](http://firebase.google.com/):Utilizado como base de datos.
-- [React Router Dom](): Utilizado para implementar la navegación por rutas.
-- [React Icons](): Utilizada para iconos
+- [React Router Dom](https://reactrouter.com/): Utilizado para implementar la navegación por rutas.
+- [React Icons](https://react-icons.github.io/react-icons/): Utilizada como libreria de iconos.
+- 
 
 Desarrollado por Facha

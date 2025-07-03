@@ -14,7 +14,7 @@ const ErrorPage = () => {
     >
       <h2>Guer ar ui gouin? 🤔</h2>
       <p>Lo siento, lo que buscas no está aqui...  Igual que ella.</p>
-      <Link to='/' className='btn btn-dark'> Volver a casa... Solo para ver al perro</Link>
+      <Link to='/' className='btn btn-outline-dark'> Volver a casa... Solo para ver al perro</Link>
     </div>
   )
 }
