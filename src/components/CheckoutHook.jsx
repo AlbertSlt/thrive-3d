@@ -23,7 +23,8 @@ const CheckoutHook = () => {
                 name: dataDelForm.name,
                 lastname: dataDelForm.lastname,
                 address: dataDelForm.address,
-                email: dataDelForm.email
+                email: dataDelForm.email,
+                comments: dataDelForm.comments
             },
             compras: cart,
             total: valorTotal(),
@@ -75,7 +76,7 @@ const CheckoutHook = () => {
                                 {errors?.secondemail?.type === 'required' && <span style={{ color: "red" }}>Por favor complete este campo</span>}
                                 {errors?.secondemail?.type === 'equalsMails' && <span style={{ color: "red" }}>Los mails deben ser iguales</span>}
 
-                                <input className="form-control" type="text" name='comments' placeholder='Comentarios especiales para su compra' />
+                                <input className="form-control" type="text" name='comments' placeholder='Comentarios especiales para su compra' {...register("comments")} />
                                 <button className='btn btn-outline-success' type='submit' disabled={!cart.length}>Finalizar compra</button>
                             </form>
                         </div>
