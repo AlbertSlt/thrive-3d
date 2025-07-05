@@ -31,12 +31,12 @@ const CartView = () => {
             <div>
                 {
                     cart.map((compra) => (
-                        <div key={compra.id} style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', width: '100%', padding: '2 rem' }} >
+                        <div key={compra.id} style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', width: '100%', padding: '2rem' }} >
                             <img src={compra.img} alt={compra.name} style={{ width: '10rem' }} />
-                            <span>{compra.name}</span>
-                            <span>${compra.price},00</span>
-                            <span>{compra.quantity}</span>
-                            <span>Precio final: ${compra.price * compra.quantity},00</span>
+                            <span>Item: {compra.name}</span>
+                            <span> Precio unitario ${compra.price},00</span>
+                            <span>Cantidad: {compra.quantity}</span>
+                            <span>Precio total:  ${compra.price * compra.quantity},00</span>
                             <button className='btn btn-outline-danger' onClick={() => removeItem(compra.id)}>X</button>
                         </div>
                     ))

@@ -49,7 +49,7 @@ const ItemCount = ({ stock, onAdd }) => {
                 <button className='btn btn-outline-success' onClick={sumar}  disabled={count >= stock}>+</button>
             </div>
             <div style={{textAlign: 'center', marginTop: '1rem' }}>
-                <button className='btn btn-outline-primary' onClick={comprar} disabled={stock === 0 || count === 0}>Comprar</button>
+                <button className='btn btn-outline-primary' onClick={comprar} disabled={stock === 0 || count === 0}>Agregar al carrito</button>
             </div>
         </div>
     )

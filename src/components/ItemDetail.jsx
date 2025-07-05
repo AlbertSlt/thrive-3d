@@ -26,12 +26,10 @@ const ItemDetail = ({ detail }) => {
     return (
         <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <h2> Detalle del producto: {detail.name}</h2>
-            <img src={detail.img} alt={detail.name} style={{ height: '35rem' }}/>
+            <img src={detail.img} alt={detail.name} style={{ maxWidth: '100%', height: 'auto', maxHeight: '35rem' }}/>
             <p>{detail.description}</p>
             <p>{detail.price},00</p>
             <p>Stock disponible: {detail.stock} </p>
-            {/* <ItemCount stock={detail.stock} onAdd={onAdd} /> */}
-
 
             {compra ? <Link className='btn btn-outline-dark' to='/cart'> Ir al carrito</Link> : <ItemCount stock={detail.stock} onAdd={onAdd} />}
 
