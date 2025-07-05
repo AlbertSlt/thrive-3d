@@ -63,7 +63,7 @@ const IntemDetailContainer = () => {
   if (invalid) {
     return <div  style={{textAlign: "center", marginTop: "2rem"}}>
       <h1 >El producto no existe :/</h1>
-      <Link to ='/' className='btn btn-dark'>Volver al Home</Link>
+      <Link to ='/' className='btn btn-outline-dark'>Volver al Home</Link>
     </div>
   }
   

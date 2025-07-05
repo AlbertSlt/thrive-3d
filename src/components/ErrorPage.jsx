@@ -13,7 +13,7 @@ const ErrorPage = () => {
       }}
     >
       <h2>Guer ar ui gouin? 🤔</h2>
-      <p>Lo siento, lo que buscas no está aqui...  Igual que ella.</p>
+      <p>Lo siento, lo que buscas no está aqui...  Y el amor tampoco, sigue buscando, o vuelve al Home.</p>
       <Link to='/' className='btn btn-outline-dark'> Volver a casa... Solo para ver al perro</Link>
     </div>
   )
