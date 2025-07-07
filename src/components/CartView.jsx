@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 const CartView = () => {
-    const { cart, clear, removeItem, valorTotal } = useContext(CartContext) //revisar 2022*-----------------------------------------------
+    const { cart, clear, removeItem, valorTotal } = useContext(CartContext)
     const preCofirm = () => {
         Swal.fire({
             icon: "warning",
@@ -26,7 +26,7 @@ const CartView = () => {
     //puedo hacer un componente cartItem o hacer todo acá
     return (
         <div>
-            <h2 style={{ display: 'flex', justifyContent: 'space-evenly', textAlign: 'center', fontWeight: 'bold', marginTop: '2rem' }}>Mica Rito</h2>
+            <h2 style={{ display: 'flex', justifyContent: 'space-evenly', textAlign: 'center', fontWeight: 'bold', marginTop: '2.5rem', textDecoration: 'underline' }}>Mi Carrito</h2>
 
             <div>
                 {

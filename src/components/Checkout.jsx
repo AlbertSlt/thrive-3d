@@ -33,7 +33,8 @@ const Checkout = () => {
                 comprador: buyer,
                 compras: cart,
                 total: valorTotal(),
-                date: serverTimestamp()
+                date: serverTimestamp(),
+                mensaje: comments()
             }
             const ventas = collection(db, "orders") //colección "orders" (p/ej) si el metodo collection no la encuentra, la creará
             //agregar un doc
