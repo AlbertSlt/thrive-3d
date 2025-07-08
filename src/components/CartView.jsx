@@ -9,8 +9,8 @@ const CartView = () => {
         Swal.fire({
             icon: "warning",
             title: 'Seguro que queres vaciar el carrito?',
-                showDenyButton: true,
-                confirmButtonText: 'Si'
+            showDenyButton: true,
+            confirmButtonText: 'Si'
         }).then((result) => {
             if (result.isConfirmed) {
                 clear()
@@ -31,20 +31,24 @@ const CartView = () => {
             <div>
                 {
                     cart.map((compra) => (
-                        <div key={compra.id} style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', width: '100%', padding: '2rem' }} >
-                            <img src={compra.img} alt={compra.name} style={{ width: '10rem' }} />
-                            <span>Item: {compra.name}</span>
-                            <span> Precio unitario ${compra.price},00</span>
-                            <span>Cantidad: {compra.quantity}</span>
-                            <span>Precio total:  ${compra.price * compra.quantity},00</span>
+                        <div key={compra.id} style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', width: '100%', padding: '1rem' }} >
+                            <img src={compra.img} alt={compra.name} style={{ maxHeight:'7 rem' }} />
+                            <span><strong> Item:</strong> {compra.name}</span>
+                            <span><strong> Precio unitario:</strong> ${compra.price},00</span>
+                            <span><strong> Cantidad:</strong> {compra.quantity}</span>
+                            <span><strong> Subtotal:</strong>  ${compra.price * compra.quantity},00</span>
                             <button className='btn btn-outline-danger' onClick={() => removeItem(compra.id)}>X</button>
                         </div>
                     ))
                 }
             </div>
 
-            <span style={{ display: 'flex', justifyContent: 'space-evenly', textAlign: 'center', fontSize: '1.3rem', fontWeight: 'bold' }}>Total a pagar: ${valorTotal()},00 </span>
-            <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', width: '100%', padding: '2 rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', width: '100%', margin: '1.5rem 0' }}>
+                <span style={{ textAlign: 'center', fontSize: '1.3rem', fontWeight: 'bold', border: '2px solid black', padding: '0.8rem 1.5rem' }}>
+                    Total a pagar: ${valorTotal()},00
+                </span>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', width: '100%', marginTop: '2rem' }}>
                 <button className='btn btn-outline-danger' onClick={preCofirm}>Vaciar carrito</button>
                 <Link className='btn btn-outline-success' to='/checkout'>Terminar Compra</Link>
             </div>
