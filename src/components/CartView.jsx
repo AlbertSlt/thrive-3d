@@ -23,7 +23,6 @@ const CartView = () => {
         })
     }
 
-    //puedo hacer un componente cartItem o hacer todo acá
     return (
         <div>
             <h2 style={{ display: 'flex', justifyContent: 'space-evenly', textAlign: 'center', fontWeight: 'bold', marginTop: '2.5rem', textDecoration: 'underline' }}>Mi Carrito</h2>
@@ -32,7 +31,7 @@ const CartView = () => {
                 {
                     cart.map((compra) => (
                         <div key={compra.id} style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', width: '100%', padding: '1rem' }} >
-                            <img src={compra.img} alt={compra.name} style={{ maxHeight:'7rem' }} />
+                            <img src={compra.img} alt={compra.name} style={{ maxHeight: '7rem' }} />
                             <span><strong> Item:</strong> {compra.name}</span>
                             <span><strong> Precio unitario:</strong> ${compra.price},00</span>
                             <span><strong> Cantidad:</strong> {compra.quantity}</span>

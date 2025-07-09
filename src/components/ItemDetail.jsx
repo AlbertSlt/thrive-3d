@@ -1,22 +1,11 @@
-//importamos el hook useContext para usar el contexto
 import React, { useContext, useState } from 'react'
-//tambien tengo que importar el contexto que quiero usar 
 import { CartContext } from '../context/CartContext'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom'
 
 const ItemDetail = ({ detail }) => {
     const { addItem } = useContext(CartContext)
-    //para consumir el contexto uso el hook useContext, debo pasar el dato de CUAL contexto quiero usar
-    //  const contexto = useContext(CartContext)
-    //puedo hace un descontructuring porque el contexto devuelve un objeto, entonces puedo desc {cart}
-    //const { cart } = useContext(CartContext)
-
-
-    //recomendacion de la profe <3
     const [compra, setCompra] = useState(false)
-
-
 
     const onAdd = (cantidad) => {
         addItem(detail, cantidad)
@@ -26,7 +15,7 @@ const ItemDetail = ({ detail }) => {
     return (
         <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <h2> Detalle del producto: {detail.name}</h2>
-            <img src={detail.img} alt={detail.name} style={{ maxWidth: '100%', height: 'auto', maxHeight: '35rem' }}/>
+            <img src={detail.img} alt={detail.name} style={{ maxWidth: '100%', height: 'auto', maxHeight: '35rem' }} />
             <p>{detail.description}</p>
             <p>{detail.price},00</p>
             <p>Stock disponible: {detail.stock} </p>

@@ -1,30 +1,7 @@
-//NAVBAR NORMAL
-// import CartWidget from "./CartWidget"
-// import { NavLink } from "react-router-dom"
-
-// const NavBar = () => {
-//   return(
-//   <nav className="nav-contain">
-//     <NavLink to="/">Home</NavLink>
-//     <NavLink to="/Impresoras 3d">Impresoras 3d</NavLink>
-//     <NavLink to="">2222</NavLink>
-//     <NavLink to="">2222</NavLink>
-//     <CartWidget />
-//   </nav>
-//   )
-// }
-// export default NavBar
-
-
-
-
-//NAVBAR BOOTSTRAP:
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import { IoCartOutline } from "react-icons/io5";
-import Badge from 'react-bootstrap/Badge';
 import CartWidget from './CartWidget';
 import { NavLink } from 'react-router-dom'
 
@@ -45,10 +22,10 @@ function NavBar() {
               <NavDropdown.Divider />
               <NavDropdown.Item as={NavLink} to='/category/Modelos'>Modelos</NavDropdown.Item>
             </NavDropdown>
-                 <CartWidget />
+            <CartWidget />
           </Nav>
           <div className="text-end">
-       
+
           </div>
         </Navbar.Collapse>
       </Container>

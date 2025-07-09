@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Nosotros = () => {
     return (
         <div>
@@ -14,7 +12,7 @@ const Nosotros = () => {
                     width: '70%',
                     margin: '0 auto',
                 }}>
-                <p style={{textAlign: 'center', fontSize:'1.3rem'}}>Somos tu socio confiable en el mundo de la impresión 3D. Con más de 3 años de experiencia en el mercado, nos dedicamos a ofrecerte una amplia gama de insumos de alta calidad para tus proyectos.
+                <p style={{ textAlign: 'center', fontSize: '1.3rem' }}>Somos tu socio confiable en el mundo de la impresión 3D. Con más de 3 años de experiencia en el mercado, nos dedicamos a ofrecerte una amplia gama de insumos de alta calidad para tus proyectos.
 
                     En nuestro catálogo encontrarás filamentos de diversos materiales y colores, repuestos esenciales para el mantenimiento de tus equipos, y una cuidada selección de impresoras 3D diseñadas para satisfacer tanto a entusiastas como a profesionales.
 
